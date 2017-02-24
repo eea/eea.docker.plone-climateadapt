@@ -1,0 +1,57 @@
+apache:
+  image: eeacms/apache
+  ports:
+  - "80:80"
+  links:
+  - www1
+  environment:
+  - SERVER_ADMIN=helpdesk@www1.dev
+  - SERVER_NAME=www1.dev
+  - RewriteRule=^/(.*) http://www1:8080/VirtualHostBase/http/www1.dev:80/VirtualHostRoot/$$1 [P,L]
+
+zeoserver:
+  image: eeacms/zeoserver
+  ports:
+  - "8100:8100"
+  volumes_from:
+  - data
+  environment:
+    ZOPE_MODE: zeoserver
+
+# varnish:
+#   image: eeacms/varnish
+#   ports:
+#   - "81:6081"
+#   links:
+#   - www1
+#   environment:
+#   - BACKENDS_PROBE_INTERVAL=3s
+#   - BACKENDS_PROBE_TIMEOUT=1s
+#   - BACKENDS_PROBE_WINDOW=3
+#   - BACKENDS_PROBE_THRESHOLD=2
+
+www1:
+  image: mergi
+  # image: eeacms/plone-copernicus-land:2017.02.21
+  links:
+  - zeoserver
+  environment:
+    ZOPE_MODE: zeo_client
+  ports:
+  - "8081:8080"
+  volumes_from:
+  - data
+  # command: sh -c \"tail -f /dev/null\"
+  entrypoint:
+  - sh
+  - -c
+  - "tail -f /dev/null"
+
+data:
+  image: busybox
+  tty: true
+  stdin_open: true
+  volumes:
+  - /opt/zeoserver/var/filestorage
+  - /opt/zeoserver/var/blobstorage
+  command: ["chown", "-v", "-R", "500:500", "/opt/zeoserver/var"]
