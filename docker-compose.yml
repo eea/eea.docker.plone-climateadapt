@@ -13,8 +13,9 @@ zeoserver:
   image: eeacms/zeoserver
   ports:
   - "8100:8100"
-  volumes_from:
-  - data
+  volumes:
+  - /home/iulian/Workspace/tmp/filestorage:/opt/zeoserver/var/filestorage
+  - /home/iulian/Workspace/tmp/blobstorage:/opt/zeoserver/var/blobstorage
   environment:
     ZOPE_MODE: zeoserver
 
@@ -31,7 +32,7 @@ zeoserver:
 #   - BACKENDS_PROBE_THRESHOLD=2
 
 www1:
-  image: mergi
+  # image: mergi
   # image: eeacms/plone-copernicus-land:2017.02.21
   links:
   - zeoserver
@@ -39,19 +40,8 @@ www1:
     ZOPE_MODE: zeo_client
   ports:
   - "8081:8080"
-  volumes_from:
-  - data
   # command: sh -c \"tail -f /dev/null\"
   entrypoint:
   - sh
   - -c
   - "tail -f /dev/null"
-
-data:
-  image: busybox
-  tty: true
-  stdin_open: true
-  volumes:
-  - /opt/zeoserver/var/filestorage
-  - /opt/zeoserver/var/blobstorage
-  command: ["chown", "-v", "-R", "500:500", "/opt/zeoserver/var"]
