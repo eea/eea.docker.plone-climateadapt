@@ -31,17 +31,54 @@ zeoserver:
 #   - BACKENDS_PROBE_WINDOW=3
 #   - BACKENDS_PROBE_THRESHOLD=2
 
+varnish:
+  image: eeacms/varnish
+  ports:
+  - "81:6081"
+  links:
+  - www1
+  environment:
+    DNS_ENABLED: "true"
+    BACKENDS: "www1"
+
 www1:
-  # image: mergi
+  image: mergi
   # image: eeacms/plone-copernicus-land:2017.02.21
   links:
   - zeoserver
+  - memcached
+  - postfix
   environment:
     ZOPE_MODE: zeo_client
   ports:
   - "8081:8080"
-  # command: sh -c \"tail -f /dev/null\"
   entrypoint:
   - sh
   - -c
   - "tail -f /dev/null"
+
+async:
+  image: mergi
+  links:
+  - zeoserver
+  - memcached
+  - postfix
+  environment:
+  - ZOPE_MODE=zeo_async
+  entrypoint:
+  - sh
+  - -c
+  - "tail -f /dev/null"
+
+memcached:
+  image: memcached:alpine
+  command:
+  - "memcached"
+  - "-m"
+  - "2048"
+
+postfix:
+  image: eeacms/postfix
+  environment:
+  - MTP_HOST=localhost
+  - MTP_PORT=1025
