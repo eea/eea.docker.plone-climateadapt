@@ -211,28 +211,6 @@ sub vcl_deliver {
     unset resp.http.error50x;
 }
  
-sub vcl_backend_response {
-    if (beresp.http.Set-Cookie) {
-        return(deliver);
-    }
-
-    if (beresp.ttl < 120s) {
-        std.log("Adjusting TTL");
-        set beresp.ttl = 120s;
-    }
-
-    if (beresp.ttl <= 0s || beresp.http.Set-Cookie || beresp.http.Vary == "*") {
-        /*
-         * Mark as "Hit-For-Pass" for the next 2 minutes
-         */
-        set beresp.ttl = 120 s;
-        set beresp.uncacheable = true;
-        # return (hit_for_pass);
-        # varnish vcl 4 compat
-    }
-    return (deliver);
-}
- 
 sub vcl_backend_error {
     if ( beresp.status >= 500 && beresp.status <= 505) {
         # synthetic(std.fileread("/etc/varnish/500msg.html"));
