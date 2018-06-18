@@ -1,4 +1,4 @@
-FROM eeacms/kgs:18.4.25
+FROM eeacms/kgs:18.6.15
 MAINTAINER "EEA: IDM2 B-Team"
 
 ENV GRAYLOG_FACILITY=cca-plone
