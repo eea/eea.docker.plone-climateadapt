@@ -14,3 +14,4 @@ RUN buildout
 
 COPY buildout.cfg /plone/instance/
 RUN buildout -N
+RUN chown -R plone /plone
