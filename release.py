@@ -1,9 +1,9 @@
 #!/usr/bin/env python2
 
-import shutil
-import subprocess
 import json
 import os
+import shutil
+import subprocess
 from decimal import Decimal
 from urlparse import urlparse
 
@@ -11,7 +11,7 @@ from urlparse import urlparse
 def run_command(command):
     p = subprocess.Popen(command, stdout=subprocess.PIPE)
     (response, err) = p.communicate()
-    p_status = p.wait()
+    # p_status = p.wait()
     return (response, err)
 
 
@@ -22,6 +22,7 @@ def _tag_release(version):
         token = read_data.strip()
     else:
         print "Could not make release: token not found"
+        print "Get your own at: https://github.com/settings/tokens"
         return
 
     payload = {
@@ -35,7 +36,9 @@ def _tag_release(version):
     data = urlparse(url)
     path = data.path.replace('.git', '')
     url = 'https://api.github.com/repos' + path.strip() + '/releases'
-    (resp, err) = run_command(['curl', '-H', 'Authorization: token '+str(token), url, '-X', 'POST', '-d', json.dumps(payload) ])
+    (resp, err) = run_command(['curl', '-H', 'Authorization: token ' +
+                               str(token), url, '-X', 'POST', '-d',
+                               json.dumps(payload)])
     data = json.loads(resp)
     if 'message' in data:
         print "Release error:" + data['message']
