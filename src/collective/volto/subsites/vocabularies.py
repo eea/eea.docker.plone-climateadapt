@@ -12,7 +12,7 @@ class SubsitesColorsVocabularyFactory(object):
     def terms(self):
         terms = []
         colors = api.portal.get_registry_record(
-            "available_colors", interface=IVoltoSubsitesSettings, default=[]
+            "available_styles", interface=IVoltoSubsitesSettings, default=[]
         )
         for color in colors:
             if "|" in color:

@@ -32,11 +32,12 @@ class ISubsite(model.Schema):
         required=False,
     )
 
-    subsite_color = Choice(
-        title=_("subsite_color_label", default="Subsite color"),
+    subsite_css_class = Choice(
+        title=_("subsite_css_class_label", default="Subsite style"),
         description=_(
-            "subsite_color_label",
-            default="Select the main color of this subsite.",
+            "subsite_css_class_label",
+            default="If this subsite should have a custom layout, please "
+            "select one from the following list.",
         ),
         required=False,
         vocabulary="volto.subsites.colors",

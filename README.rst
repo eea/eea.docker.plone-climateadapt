@@ -1,30 +1,37 @@
-.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
-   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
-   This text does not appear on pypi or github. It is a comment.
 
-=========================
-collective.volto.subsites
-=========================
+==============
+Volto Subsites
+==============
 
-Tell me what your product does
-
-Features
---------
-
-- Can be bullet points
+This add-on enable a new **Subsite** content-type and provides some utilities for Volto.
 
 
-Examples
---------
+Subsite
+-------
 
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+It's a basic folderish content with some additional fields:
 
+- Header text
+- Footer text
+- Color
+- Image
 
-Documentation
+These fields are useful for Volto theme that will draw some components based on these values.
+
+Accessing Subsite data from restapi
+------------------------------------
+
+There is a new expansion slot in restapi response when getting content data: `subsite`.
+
+This expansion works like the standard ones (workflow, breadcrumbs, etc) and returns some metadata of the
+parent Subsite if the requested content is inside a Subsite.
+
+Control panel
 -------------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+There is a control panel that allows to set some settings for Subsites:
+
+- Styles: you can set a predefined list of css classes that will be used in Volto theme to set some custom styles inside the subsite.
 
 
 Translations
@@ -32,7 +39,7 @@ Translations
 
 This product has been translated into
 
-- Klingon (thanks, K'Plai)
+- Italian
 
 
 Installation
@@ -56,17 +63,18 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.volto.subsites/issues
 - Source Code: https://github.com/collective/collective.volto.subsites
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
 
 
 License
 -------
 
 The project is licensed under the GPLv2.
+
+Authors
+=======
+
+This product was developed by **RedTurtle Technology** team.
+
+.. image:: https://avatars1.githubusercontent.com/u/1087171?s=100&v=4
+   :alt: RedTurtle Technology Site
+   :target: http://www.redturtle.it/

@@ -12,16 +12,18 @@ class ICollectiveVoltoSubsitesLayer(IDefaultBrowserLayer):
 class IVoltoSubsitesSettings(Interface):
     """ Interface for Volto Subsites controlpanel """
 
-    available_colors = List(
-        title=_("available_colors_label", default="Available colors"),
+    available_styles = List(
+        title=_("available_styles_label", default="Available styles"),
         description=_(
-            "available_colors_help",
-            default="Fill this field with a list of available colors for "
-            "Subsistes. Write one color per row with the following format:"
+            "available_styles_help",
+            default="Fill this field with a list of available styles for "
+            "Subsistes. A style is a css class that will provide some custom "
+            "layout to the Subsite and its children."
+            "Write one style per row with the following format:"
             " css_class|label "
-            'where: "css_class" is the name of the css class that will be '
-            'used in the frontend and "label" is a human-friendly name for'
-            "that color.",
+            'where "css_class" is the name of the css class that will be '
+            'used in the theme and "label" is a human-friendly name for'
+            "that style.",
         ),
         default=[],
         value_type=TextLine(),

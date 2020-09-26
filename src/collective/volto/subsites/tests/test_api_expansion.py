@@ -53,7 +53,7 @@ class TestExpansion(unittest.TestCase):
                 outputMimeType="text/html",
                 encoding="utf-8",
             ),
-            subsite_color="red",
+            subsite_css_class="red",
             image=NamedBlobImage(
                 data=image_data, contentType="image/png", filename=u"image.png"
             ),
@@ -119,7 +119,9 @@ class TestExpansion(unittest.TestCase):
         self.assertEqual(data["title"], self.subsite.title)
         self.assertEqual(data["description"], "")
         self.assertIn("image", data)
-        self.assertEqual(data["subsite_color"], self.subsite.subsite_color)
+        self.assertEqual(
+            data["subsite_css_class"], self.subsite.subsite_css_class
+        )
         self.assertEqual(
             data["subsite_header"]["data"], self.subsite.subsite_header.output
         )
@@ -156,7 +158,9 @@ class TestExpansion(unittest.TestCase):
         self.assertEqual(data["title"], self.subsite.title)
         self.assertEqual(data["description"], "")
         self.assertIn("image", data)
-        self.assertEqual(data["subsite_color"], self.subsite.subsite_color)
+        self.assertEqual(
+            data["subsite_css_class"], self.subsite.subsite_css_class
+        )
         self.assertEqual(
             data["subsite_header"]["data"], self.subsite.subsite_header.output
         )

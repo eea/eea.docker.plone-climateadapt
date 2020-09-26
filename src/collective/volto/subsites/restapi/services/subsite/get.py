@@ -54,7 +54,7 @@ class Subsite(object):
                 if name not in [
                     "subsite_header",
                     "subsite_footer",
-                    "subsite_color",
+                    "subsite_css_class",
                     "image",
                 ]:
                     continue
