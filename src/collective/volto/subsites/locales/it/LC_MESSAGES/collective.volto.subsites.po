@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,85 +12,85 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: collective.volto.subsites\n"
+"Domain: DOMAIN\n"
 
 #: collective/volto/subsites/profiles/default/types/Subsite.xml
 msgid "Add a Subsite folder"
-msgstr ""
+msgstr "Aggiungi un Sottosito"
 
 #: collective/volto/subsites/profiles/default/types/Subsite.xml
 msgid "Edit"
-msgstr ""
+msgstr "Modifica"
 
 #: collective/volto/subsites/configure.zcml:28
 msgid "Installs the collective.volto.subsites add-on."
-msgstr ""
+msgstr "Installa collective.volto.subsites."
 
 #: collective/volto/subsites/profiles/default/types/Subsite.xml
 msgid "Subsite"
-msgstr ""
+msgstr "Sottosito"
 
 #: collective/volto/subsites/profiles/default/controlpanel.xml
 msgid "Subsites Settings"
-msgstr ""
+msgstr "Impostazioni Sottositi"
 
 #: collective/volto/subsites/configure.zcml:37
 msgid "Uninstalls the collective.volto.subsites add-on."
-msgstr ""
+msgstr "Disisntalla collective.volto.subsites."
 
 #: collective/volto/subsites/profiles/default/types/Subsite.xml
 msgid "View"
-msgstr ""
+msgstr "Vista"
 
 #. Default: "Fill this field with a list of available styles for Subsistes. A style is a css class that will provide some custom layout to the Subsite and its children.Write one style per row with the following format: css_class|label where \"css_class\" is the name of the css class that will be used in the theme and \"label\" is a human-friendly name forthat style."
 #: collective/volto/subsites/interfaces.py:17
 msgid "available_styles_help"
-msgstr ""
+msgstr "Inserisci una lista di possibili stili per i Sottositi. Uno stile è una classe CSS che aggiunge stili particolari ad un Sottosito e ai suoi figli. Scrivi uno stile per riga nel seguente formato: classe_css|etichetta dove \"classe_css\" è il nome della classe css che verrà usata nel tema e \"etichetta\" è un nome comprensibile ai redattori." 
 
 #. Default: "Available styles"
 #: collective/volto/subsites/interfaces.py:16
 msgid "available_styles_label"
-msgstr ""
+msgstr "Stili disponibili"
 
 #: collective/volto/subsites/configure.zcml:28
 msgid "collective.volto.subsites"
-msgstr ""
+msgstr "collective.volto.subsites"
 
 #: collective/volto/subsites/configure.zcml:37
 msgid "collective.volto.subsites (uninstall)"
-msgstr ""
+msgstr "collective.volto.subsites (uninstall)"
 
 #. Default: "If this subsite should have a custom layout, please select one from the following list."
 #: collective/volto/subsites/content/subsite.py:37
 msgid "subsite_css_class_help"
-msgstr ""
+msgstr "Se questo Sottosito deve avere un stile particolare, selezionane uno dalla seguente lista."
 
 #. Default: "Subsite style"
 #: collective/volto/subsites/content/subsite.py:36
 msgid "subsite_css_class_label"
-msgstr ""
+msgstr "Stile sottosito"
 
 #. Default: "Insert some text that will be shown as the subsite footer in each content inside a subsite."
 #: collective/volto/subsites/content/subsite.py:27
 msgid "subsite_footer_help"
-msgstr ""
+msgstr "Inserisci del testo che verrà mostrato come footer nel sottosito e nei suoi figli."
 
 #. Default: "Subsite footer"
 #: collective/volto/subsites/content/subsite.py:26
 msgid "subsite_footer_label"
-msgstr ""
+msgstr "Footer Sottosito"
 
 #. Default: "Insert some text that will be shown as the subsite header in each content inside a subsite."
 #: collective/volto/subsites/content/subsite.py:18
 msgid "subsite_header_help"
-msgstr ""
+msgstr "Inserisci del testo che verrà mostrato in testata nel sottosito e nei suoi figli."
 
 #. Default: "Subsite header"
 #: collective/volto/subsites/content/subsite.py:17
 msgid "subsite_header_label"
-msgstr ""
+msgstr "Testata sottosito"
 
 #. Default: "Subsites Settings"
 #: collective/volto/subsites/browser/controlpanel.py:10
 msgid "volto_subsites_settings_label"
-msgstr ""
+msgstr "Impostazioni Sottosito"
