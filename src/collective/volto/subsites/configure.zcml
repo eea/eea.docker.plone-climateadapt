@@ -14,6 +14,7 @@
   <!--<includeDependencies package="." />-->
 
   <include package=".browser" />
+  <include package=".restapi" />
 
   <include file="permissions.zcml" />
 
@@ -41,5 +42,8 @@
       />
 
   <!-- -*- extra stuff goes here -*- -->
-
+  <utility
+    component=".vocabularies.SubsitesColorsVocabulary"
+    name="volto.subsites.colors"
+    />
 </configure>

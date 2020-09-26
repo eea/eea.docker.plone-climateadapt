@@ -3,6 +3,6 @@
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="collective.volto.subsites">
 
-    <records interface="collective.volto.subsites.interfaces.IVoltoSubsitesSettings" />
+    <records interface="collective.volto.subsites.interfaces.IVoltoSubsitesSettings" remove="True" />
 
 </registry>
