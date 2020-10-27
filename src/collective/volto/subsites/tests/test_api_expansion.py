@@ -138,14 +138,7 @@ class TestExpansion(unittest.TestCase):
         result = response.json()
         data = result["@components"]["subsite"]
 
-        self.assertEqual(
-            data,
-            {
-                "@id": "{}/@subsite".format(
-                    self.document_outside_subsite.absolute_url()
-                )
-            },
-        )
+        self.assertEqual(data, {})
 
     def test_calling_expansion_directly_returns_data(self):
         response = self.api_session.get(
@@ -176,11 +169,4 @@ class TestExpansion(unittest.TestCase):
         )
         data = response.json()
 
-        self.assertEqual(
-            data,
-            {
-                "@id": "{}/@subsite".format(
-                    self.document_outside_subsite.absolute_url()
-                )
-            },
-        )
+        self.assertEqual(data, {})
