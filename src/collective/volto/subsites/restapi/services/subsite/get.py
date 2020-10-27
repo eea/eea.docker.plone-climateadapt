@@ -31,7 +31,7 @@ class Subsite(object):
 
         subsite = self.get_subsite_info()
         if not subsite:
-            return result
+            return {}
         result["subsite"] = subsite
         return result
 
