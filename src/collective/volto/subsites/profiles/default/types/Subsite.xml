@@ -45,14 +45,12 @@
 
   <!-- View information -->
   <property name="add_view_expr">string:${folder_url}/++add++Subsite</property>
-  <property name="default_view">listing_view</property>
+  <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
   <property name="view_methods">
-    <element value="full_view"/>
+    <element value="view"/>
     <element value="listing_view"/>
-    <element value="summary_view"/>
-    <element value="tabular_view"/>
   </property>
 
   <!-- Method aliases -->
