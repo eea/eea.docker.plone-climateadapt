@@ -29,10 +29,7 @@ class Subsite(object):
         if not expand:
             return result
 
-        subsite = self.get_subsite_info()
-        if not subsite:
-            return {}
-        result["subsite"] = subsite
+        result["subsite"] = self.get_subsite_info()
         return result
 
     def get_subsite_info(self):
