@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends apt-utils \
  python-setuptools binutils libgdal-dev -y
 
 RUN pip install numpy==1.16.4
-RUN pip install pygdal==2.1.2.3 oauth2client
+RUN pip install pygdal==2.1.2.3 rsa==4.0 oauth2client
 
 RUN buildout
 
