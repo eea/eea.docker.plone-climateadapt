@@ -1,0 +1,14 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <genericsetup:upgradeSteps
+    source="1000"
+    destination="1100"
+    profile="collective.volto.subsites:default">
+    <genericsetup:upgradeStep
+        title="Disable searchable type"
+        handler=".upgrades.to_1100"
+        />
+  </genericsetup:upgradeSteps>
+</configure>
