@@ -8,8 +8,6 @@ from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.registry.interfaces import IRegistry
 from Products.CMFPlone.interfaces import ISearchSchema
-from Products.CMFPlone.interfaces import ISiteSchema
-from Products.CMFPlone.interfaces.controlpanel import INavigationSchema
 from zope.component import getUtility
 
 import unittest
