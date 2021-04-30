@@ -6,6 +6,9 @@ from collective.volto.subsites.testing import (
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
+from plone.registry.interfaces import IRegistry
+from Products.CMFPlone.interfaces import ISearchSchema
+from zope.component import getUtility
 
 import unittest
 
@@ -76,3 +79,8 @@ class TestUninstall(unittest.TestCase):
         self.assertNotIn(
             ICollectiveVoltoSubsitesLayer, utils.registered_layers()
         )
+
+    def test_subsite_not_searchable(self):
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(ISearchSchema, prefix="plone")
+        self.assertIn("Subsite", settings.types_not_searched)

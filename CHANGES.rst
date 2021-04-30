@@ -5,7 +5,8 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Disable Subsite from searchable contents.
+  [cekk]
 
 
 1.0.0 (2020-12-15)

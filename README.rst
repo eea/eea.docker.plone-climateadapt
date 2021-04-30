@@ -18,6 +18,8 @@ It's a basic folderish content with some additional fields:
 
 These fields are useful for Volto theme that will draw some components based on these values.
 
+**Subsite** contents are not searchable.
+
 Accessing Subsite data from restapi
 ------------------------------------
 
