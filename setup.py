@@ -16,7 +16,7 @@ long_description = "\n\n".join(
 
 setup(
     name="collective.volto.subsites",
-    version="1.1.0",
+    version="1.1.1.dev0",
     description="Add Subsite content-type for Volto",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
