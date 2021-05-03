@@ -44,10 +44,10 @@ class ISubsite(model.Schema):
         vocabulary="volto.subsites.colors",
     )
 
-    social_links = SourceText(
-        title=_("social_links_label", default="Social links"),
+    subsite_social_links = SourceText(
+        title=_("subsite_social_links_label", default="Social links"),
         description=_(
-            "social_links_help",
+            "subsite_social_links_help",
             default="Insert a list of values for social links that will be "
             "shown in the frontend (if expected).",
         ),
