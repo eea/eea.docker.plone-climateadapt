@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.2.1 (unreleased)
+1.2.1 (2021-05-04)
 ------------------
 
 - Add default value to social links field.
