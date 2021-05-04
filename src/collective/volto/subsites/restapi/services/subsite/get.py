@@ -52,6 +52,7 @@ class Subsite(object):
                     "subsite_header",
                     "subsite_footer",
                     "subsite_css_class",
+                    "subsite_social_links",
                     "image",
                 ]:
                     continue

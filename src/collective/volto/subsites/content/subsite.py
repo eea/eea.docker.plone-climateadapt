@@ -5,6 +5,7 @@ from plone.app.z3cform.widget import RichTextFieldWidget
 from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.schema import Choice
+from plone.schema import SourceText
 from plone.supermodel import model
 from zope.interface import implementer
 
@@ -41,6 +42,16 @@ class ISubsite(model.Schema):
         ),
         required=False,
         vocabulary="volto.subsites.colors",
+    )
+
+    subsite_social_links = SourceText(
+        title=_("subsite_social_links_label", default="Social links"),
+        description=_(
+            "subsite_social_links_help",
+            default="Insert a list of values for social links that will be "
+            "shown in the frontend (if expected).",
+        ),
+        default="",
     )
 
     directives.widget("subsite_header", RichTextFieldWidget)

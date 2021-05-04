@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-09-26 13:34+0000\n"
+"POT-Creation-Date: 2021-05-03 09:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,83 +14,93 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: collective/volto/subsites/profiles/default/types/Subsite.xml
+#: ../profiles/default/types/Subsite.xml
 msgid "Add a Subsite folder"
 msgstr ""
 
-#: collective/volto/subsites/profiles/default/types/Subsite.xml
+#: ../profiles/default/types/Subsite.xml
 msgid "Edit"
 msgstr ""
 
-#: collective/volto/subsites/configure.zcml:28
+#: ../configure.zcml:29
 msgid "Installs the collective.volto.subsites add-on."
 msgstr ""
 
-#: collective/volto/subsites/profiles/default/types/Subsite.xml
+#: ../profiles/default/types/Subsite.xml
 msgid "Subsite"
 msgstr ""
 
-#: collective/volto/subsites/profiles/default/controlpanel.xml
+#: ../profiles/default/controlpanel.xml
 msgid "Subsites Settings"
 msgstr ""
 
-#: collective/volto/subsites/configure.zcml:37
+#: ../configure.zcml:38
 msgid "Uninstalls the collective.volto.subsites add-on."
 msgstr ""
 
-#: collective/volto/subsites/profiles/default/types/Subsite.xml
+#: ../profiles/default/types/Subsite.xml
 msgid "View"
 msgstr ""
 
 #. Default: "Fill this field with a list of available styles for Subsistes. A style is a css class that will provide some custom layout to the Subsite and its children.Write one style per row with the following format: css_class|label where \"css_class\" is the name of the css class that will be used in the theme and \"label\" is a human-friendly name forthat style."
-#: collective/volto/subsites/interfaces.py:17
+#: ../interfaces.py:17
 msgid "available_styles_help"
 msgstr ""
 
 #. Default: "Available styles"
-#: collective/volto/subsites/interfaces.py:16
+#: ../interfaces.py:16
 msgid "available_styles_label"
 msgstr ""
 
-#: collective/volto/subsites/configure.zcml:28
+#: ../configure.zcml:29
 msgid "collective.volto.subsites"
 msgstr ""
 
-#: collective/volto/subsites/configure.zcml:37
+#: ../configure.zcml:38
 msgid "collective.volto.subsites (uninstall)"
 msgstr ""
 
 #. Default: "If this subsite should have a custom layout, please select one from the following list."
-#: collective/volto/subsites/content/subsite.py:37
+#: ../content/subsite.py:38
 msgid "subsite_css_class_help"
 msgstr ""
 
 #. Default: "Subsite style"
-#: collective/volto/subsites/content/subsite.py:36
+#: ../content/subsite.py:37
 msgid "subsite_css_class_label"
 msgstr ""
 
 #. Default: "Insert some text that will be shown as the subsite footer in each content inside a subsite."
-#: collective/volto/subsites/content/subsite.py:27
+#: ../content/subsite.py:28
 msgid "subsite_footer_help"
 msgstr ""
 
 #. Default: "Subsite footer"
-#: collective/volto/subsites/content/subsite.py:26
+#: ../content/subsite.py:27
 msgid "subsite_footer_label"
 msgstr ""
 
 #. Default: "Insert some text that will be shown as the subsite header in each content inside a subsite."
-#: collective/volto/subsites/content/subsite.py:18
+#: ../content/subsite.py:19
 msgid "subsite_header_help"
 msgstr ""
 
 #. Default: "Subsite header"
-#: collective/volto/subsites/content/subsite.py:17
+#: ../content/subsite.py:18
 msgid "subsite_header_label"
 msgstr ""
 
+#. Default: "Insert a list of values for social links that will be shown in the frontend (if expected)."
+#: ../content/subsite.py:49
+msgid "subsite_social_links_help"
+msgstr ""
+
+#. Default: "Social links"
+#: ../content/subsite.py:48
+msgid "subsite_social_links_label"
+msgstr ""
+
 #. Default: "Subsites Settings"
-#: collective/volto/subsites/browser/controlpanel.py:10
+#: ../browser/controlpanel.py:10
 msgid "volto_subsites_settings_label"
 msgstr ""

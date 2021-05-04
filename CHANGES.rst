@@ -5,7 +5,8 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add additional field for manage social links in subsite.
+  [cekk]
 
 
 1.1.0 (2021-04-30)
