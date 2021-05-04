@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.1.1 (unreleased)
+1.2.0 (2021-05-04)
 ------------------
 
 - Add additional field for manage social links in subsite.
