@@ -51,7 +51,7 @@ class ISubsite(model.Schema):
             default="Insert a list of values for social links that will be "
             "shown in the frontend (if expected).",
         ),
-        default="",
+        default="[]",
     )
 
     directives.widget("subsite_header", RichTextFieldWidget)

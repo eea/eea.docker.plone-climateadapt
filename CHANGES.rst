@@ -5,7 +5,8 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add default value to social links field.
+  [cekk]
 
 
 1.2.0 (2021-05-04)
