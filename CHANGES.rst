@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.2.2 (unreleased)
+1.2.2 (2021-06-07)
 ------------------
 
 - Enable subsites to be translatables.
