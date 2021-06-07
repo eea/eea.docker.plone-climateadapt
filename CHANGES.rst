@@ -5,7 +5,8 @@ Changelog
 1.2.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Enable subsites to be translatables.
+  [cekk]
 
 
 1.2.1 (2021-05-04)
