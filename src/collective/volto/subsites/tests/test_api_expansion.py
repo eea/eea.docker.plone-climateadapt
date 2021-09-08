@@ -57,6 +57,9 @@ class TestExpansion(unittest.TestCase):
             image=NamedBlobImage(
                 data=image_data, contentType="image/png", filename=u"image.png"
             ),
+            subsite_logo=NamedBlobImage(
+                data=image_data, contentType="image/png", filename=u"image.png"
+            ),
         )
         self.document_in_subsite = api.content.create(
             container=self.subsite,
@@ -79,32 +82,22 @@ class TestExpansion(unittest.TestCase):
         result = response.json()
         self.assertIn("subsite", result["@components"])
 
-        response = self.api_session.get(
-            self.document_in_subsite.absolute_url()
-        )
+        response = self.api_session.get(self.document_in_subsite.absolute_url())
         result = response.json()
         self.assertIn("subsite", result["@components"])
 
     def test_subsite_expansion_visible_outside_subsite(self):
-        response = self.api_session.get(
-            self.document_outside_subsite.absolute_url()
-        )
+        response = self.api_session.get(self.document_outside_subsite.absolute_url())
         result = response.json()
 
         self.assertIn("subsite", result["@components"])
 
     def test_expansion_not_expanded_by_default(self):
-        response = self.api_session.get(
-            self.document_in_subsite.absolute_url()
-        )
+        response = self.api_session.get(self.document_in_subsite.absolute_url())
         result = response.json()
         self.assertEqual(
             result["@components"]["subsite"],
-            {
-                "@id": "{}/@subsite".format(
-                    self.document_in_subsite.absolute_url()
-                )
-            },
+            {"@id": "{}/@subsite".format(self.document_in_subsite.absolute_url())},
         )
 
     def test_expansion_expanded_if_passed_parameter(self):
@@ -119,9 +112,8 @@ class TestExpansion(unittest.TestCase):
         self.assertEqual(data["title"], self.subsite.title)
         self.assertEqual(data["description"], "")
         self.assertIn("image", data)
-        self.assertEqual(
-            data["subsite_css_class"], self.subsite.subsite_css_class
-        )
+        self.assertIn("subsite_logo", data)
+        self.assertEqual(data["subsite_css_class"], self.subsite.subsite_css_class)
         self.assertEqual(
             data["subsite_header"]["data"], self.subsite.subsite_header.output
         )
@@ -131,9 +123,7 @@ class TestExpansion(unittest.TestCase):
 
     def test_expansion_expanded_empty_for_contents_outside_subsite(self):
         response = self.api_session.get(
-            "{}?expand=subsite".format(
-                self.document_outside_subsite.absolute_url()
-            )
+            "{}?expand=subsite".format(self.document_outside_subsite.absolute_url())
         )
         result = response.json()
         data = result["@components"]["subsite"]
@@ -151,9 +141,8 @@ class TestExpansion(unittest.TestCase):
         self.assertEqual(data["title"], self.subsite.title)
         self.assertEqual(data["description"], "")
         self.assertIn("image", data)
-        self.assertEqual(
-            data["subsite_css_class"], self.subsite.subsite_css_class
-        )
+        self.assertIn("subsite_logo", data)
+        self.assertEqual(data["subsite_css_class"], self.subsite.subsite_css_class)
         self.assertEqual(
             data["subsite_header"]["data"], self.subsite.subsite_header.output
         )
@@ -161,9 +150,7 @@ class TestExpansion(unittest.TestCase):
             data["subsite_footer"]["data"], self.subsite.subsite_footer.output
         )
 
-    def test_calling_expansion_directly_returns_empty_data_outside_a_subsite(
-        self
-    ):
+    def test_calling_expansion_directly_returns_empty_data_outside_a_subsite(self):
         response = self.api_session.get(
             "{}/@subsite".format(self.document_outside_subsite.absolute_url())
         )

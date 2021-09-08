@@ -12,6 +12,15 @@ from zope.interface import implementer
 from zope.interface import Interface
 from zope.schema import getFields
 
+FIELDS = [
+    "subsite_header",
+    "subsite_logo",
+    "subsite_footer",
+    "subsite_css_class",
+    "subsite_social_links",
+    "image",
+]
+
 
 @implementer(IExpandableElement)
 @adapter(Interface, Interface)
@@ -21,11 +30,7 @@ class Subsite(object):
         self.request = request
 
     def __call__(self, expand=False):
-        result = {
-            "subsite": {
-                "@id": "{}/@subsite".format(self.context.absolute_url())
-            }
-        }
+        result = {"subsite": {"@id": "{}/@subsite".format(self.context.absolute_url())}}
         if not expand:
             return result
 
@@ -40,21 +45,13 @@ class Subsite(object):
         if not subsite:
             return {}
 
-        serializer = queryMultiAdapter(
-            (subsite, self.request), ISerializeToJsonSummary
-        )
+        serializer = queryMultiAdapter((subsite, self.request), ISerializeToJsonSummary)
 
         data = serializer()
 
         for schema in iterSchemata(subsite):
             for name, field in getFields(schema).items():
-                if name not in [
-                    "subsite_header",
-                    "subsite_footer",
-                    "subsite_css_class",
-                    "subsite_social_links",
-                    "image",
-                ]:
+                if name not in FIELDS:
                     continue
                 serializer = queryMultiAdapter(
                     (field, subsite, self.request), IFieldSerializer
