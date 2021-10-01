@@ -4,6 +4,7 @@ from plone.app.textfield import RichText as RichTextField
 from plone.app.z3cform.widget import RichTextFieldWidget
 from plone.autoform import directives
 from plone.dexterity.content import Container
+from plone.namedfile.field import NamedBlobImage
 from plone.schema import Choice
 from plone.schema import SourceText
 from plone.supermodel import model
@@ -11,8 +12,7 @@ from zope.interface import implementer
 
 
 class ISubsite(model.Schema):
-    """
-    """
+    """ """
 
     subsite_header = RichTextField(
         title=_("subsite_header_label", default="Subsite header"),
@@ -20,6 +20,14 @@ class ISubsite(model.Schema):
             "subsite_header_help",
             default="Insert some text that will be shown as the subsite header"
             " in each content inside a subsite.",
+        ),
+        required=False,
+    )
+    subsite_logo = NamedBlobImage(
+        title=_("subsite_logo_label", default="Logo"),
+        description=_(
+            "subsite_logo_help",
+            default="Insert a logo that can be shown in subsite header.",
         ),
         required=False,
     )
@@ -60,5 +68,4 @@ class ISubsite(model.Schema):
 
 @implementer(ISubsite)
 class Subsite(Container):
-    """
-    """
+    """ """

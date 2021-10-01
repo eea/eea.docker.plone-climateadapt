@@ -5,7 +5,8 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add subsite_logo field.
+  [cekk]
 
 
 1.2.2 (2021-06-07)
