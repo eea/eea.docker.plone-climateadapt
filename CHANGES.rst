@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.3.1 (unreleased)
+1.3.1 (2021-10-02)
 ------------------
 
 - Add kitconcept.seo behaviour.
