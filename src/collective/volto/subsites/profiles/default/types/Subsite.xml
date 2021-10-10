@@ -42,6 +42,7 @@
     <element value="plone.leadimage" />
     <element value="volto.blocks" />
     <element value="plone.translatable"/>
+    <element value="kitconcept.seo"/>
   </property>
 
   <!-- View information -->

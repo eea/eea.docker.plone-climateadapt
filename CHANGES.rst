@@ -2,11 +2,18 @@ Changelog
 =========
 
 
-1.3.1 (unreleased)
+1.3.2 (unreleased)
 ------------------
 
 - p.a.caching rules for rest api services.
   [cekk]
+
+
+1.3.1 (2021-10-02)
+------------------
+
+- Add kitconcept.seo behaviour.
+  [daniele]
 
 
 1.3.0 (2021-10-01)
