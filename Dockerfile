@@ -18,3 +18,6 @@ RUN buildout
 COPY buildout.cfg /plone/instance/
 RUN buildout -N
 RUN chown -R plone /plone
+
+RUN sed -i "s/debug-mode false/debug-mode true/" parts/zeo_client/etc/zope.conf
+RUN sed -i "s/debug-mode false/debug-mode true/" /plone/instance/parts/zeo_client/etc/zope.conf
