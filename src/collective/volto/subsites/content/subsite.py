@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.volto.subsites import _
 from plone.app.textfield import RichText as RichTextField
-from plone.app.z3cform.widget import RichTextFieldWidget
-from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.namedfile.field import NamedBlobImage
 from plone.schema import Choice
@@ -59,11 +57,8 @@ class ISubsite(model.Schema):
             default="Insert a list of values for social links that will be "
             "shown in the frontend (if expected).",
         ),
-        default="[]",
+        default=u"[]",
     )
-
-    directives.widget("subsite_header", RichTextFieldWidget)
-    directives.widget("subsite_footer", RichTextFieldWidget)
 
 
 @implementer(ISubsite)

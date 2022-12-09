@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from plone.registry.interfaces import IRegistry
 from Products.CMFPlone.interfaces import INonInstallable
-from Products.CMFPlone.interfaces import ISearchSchema
+# from Products.CMFPlone.interfaces import ISearchSchema
 from zope.component import getUtility
 from zope.interface import implementer
 
@@ -22,12 +22,13 @@ def post_install(context):
 
 
 def disable_searchable_type():
+    pass
     # remove Subsite from searchable types
-    registry = getUtility(IRegistry)
-    settings = registry.forInterface(ISearchSchema, prefix="plone")
-
-    types = list(settings.types_not_searched) + ["Subsite"]
-    settings.types_not_searched = tuple(types)
+    # registry = getUtility(IRegistry)
+    # settings = registry.forInterface(ISearchSchema, prefix="plone")
+    #
+    # types = list(settings.types_not_searched) + ["Subsite"]
+    # settings.types_not_searched = tuple(types)
 
 
 def uninstall(context):

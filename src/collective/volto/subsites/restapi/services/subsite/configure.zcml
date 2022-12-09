@@ -14,6 +14,6 @@
 
   <adapter factory=".get.Subsite" name="subsite"/>
 
-  <cache:ruleset ruleset="plone.content.dynamic" for=".get.SubsiteGet" />
+  <!-- <cache:ruleset ruleset="plone.content.dynamic" for=".get.SubsiteGet" /> -->
 
 </configure>
