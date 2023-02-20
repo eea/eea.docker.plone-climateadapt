@@ -11,10 +11,10 @@ RUN pip install numpy==1.16.4
 RUN pip install pygdal==2.1.2.3 rsa==4.0 oauth2client
 RUN pip install nltk==3.1
 
-RUN python -m nltk.downloader -d /usr/local/share/nltk_data all
+RUN python -m nltk.downloader -d /usr/local/share/nltk_data punkt
 
 RUN buildout
 
 COPY buildout.cfg /plone/instance/
 RUN buildout -N
-RUN chown -R plone /plone
+#RUN chown -R plone /plone/
