@@ -18,6 +18,5 @@ RUN pip install pygdal==2.1.2.3 rsa==4.0 oauth2client
 RUN buildout
 
 COPY buildout.cfg /plone/instance/
-RUN buildout
-# -N
-#RUN chown -R plone /plone/
+RUN timeout 3600 buildout
+#-N
