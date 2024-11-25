@@ -1,0 +1,1 @@
+collective.js.galleria==1.2.5 # fix error in collective.js.galleria setup command: 'python_requires' must be a string containing valid version specifiers; Invalid specifier: '!=3.4.*!=3.5.*'

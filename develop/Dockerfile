@@ -1,4 +1,4 @@
-FROM laszlocseh/eea.docker.plone-climateadapt
+FROM laszlocseh/eea.docker.plone-climateadapt:plone6
 
 RUN runDeps="vim tmux mc" \
  && apt-get update \
