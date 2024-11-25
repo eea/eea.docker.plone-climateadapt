@@ -1,4 +1,3 @@
 collective.exportimport
 collective.volto.subsites
 eea.coremetadata
-collective.cover

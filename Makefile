@@ -11,6 +11,11 @@ all: build tag push
 build:
 	docker build . -t $(IMAGE_NAME):$(TAG)
 
+# Build the Docker image --no-cache
+.PHONY: build-no-cache
+build-no-cache:
+	docker build -no-cache . -t $(IMAGE_NAME):$(TAG)
+
 # Tag the Docker image (redundant in this case, but included as per your request)
 .PHONY: tag
 tag:
@@ -25,3 +30,7 @@ push:
 release:
 	sh -c "python2 ./release.py"
 
+
+.PHONY: remove
+remove:
+	docker rmi $(IMAGE_NAME):$(TAG)
