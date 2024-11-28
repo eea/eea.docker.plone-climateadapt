@@ -4,8 +4,8 @@ CONTAINER_NAME = plone6-cca-dev
 PORT = 8080
 
 # Default target
-.PHONY: all
-all: build run
+.PHONY: build-nocache-run
+build-nocache-run: remove build-no-cache run
 
 # Build the Docker image
 .PHONY: build
@@ -20,7 +20,19 @@ build-no-cache:
 # Run the Docker container
 .PHONY: run
 run:
-	docker run -it --rm -p $(PORT):$(PORT) --name $(CONTAINER_NAME) $(IMAGE_NAME)
+	docker run -it \
+	-p $(PORT):$(PORT) \
+	--name $(CONTAINER_NAME) \
+	-v /home/laszlo/work/climate-adapt-eea/data-plone6:/data \
+	$(IMAGE_NAME)
+
+.PHONY: start
+start: 
+	docker start -i -a ${CONTAINER_NAME}
+
+.PHONY: stop
+stop: 
+	docker stop ${CONTAINER_NAME}
 
 .PHONY: remove
 remove:

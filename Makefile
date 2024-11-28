@@ -4,7 +4,7 @@ TAG = plone6
 
 # Default target
 .PHONY: all
-all: build tag push
+all: build-no-cache tag push
 
 # Build the Docker image
 .PHONY: build
@@ -14,7 +14,7 @@ build:
 # Build the Docker image --no-cache
 .PHONY: build-no-cache
 build-no-cache:
-	docker build -no-cache . -t $(IMAGE_NAME):$(TAG)
+	docker build --no-cache . -t $(IMAGE_NAME):$(TAG)
 
 # Tag the Docker image (redundant in this case, but included as per your request)
 .PHONY: tag
