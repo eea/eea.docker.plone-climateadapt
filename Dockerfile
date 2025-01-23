@@ -1,4 +1,4 @@
-FROM eeacms/plone-backend:6.0.13-10
+FROM eeacms/plone-backend:6.0.13-9
 
 RUN runDeps="vim tmux mc" \
   && apt-get update \
