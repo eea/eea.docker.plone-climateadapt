@@ -2,5 +2,3 @@ collective.exportimport
 collective.geolocationbehavior
 collective.volto.subsites
 eea.coremetadata
-eea.cache
-plone.tiles
