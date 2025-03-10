@@ -1,6 +1,6 @@
 # Variables
 IMAGE_NAME = tiberiuichim/eea.docker.plone-climateadapt
-TAG=6.0.13-3
+TAG=6.0.13-3-translator
 CONTAINER_NAME = plone6-cca-dev
 PORT = 8080
 
