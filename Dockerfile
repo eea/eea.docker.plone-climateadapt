@@ -1,22 +1,14 @@
-FROM eeacms/kgs:21.1.30
-MAINTAINER "EEA: IDM2 B-Team"
+FROM eeacms/plone-backend:6.0.13-16
 
-ENV GRAYLOG_FACILITY=cca-plone
+RUN runDeps="vim tmux mc" \
+  && apt-get update \
+  && apt-get install -y --no-install-recommends $runDeps \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
-#Update stretch repositories
-RUN sed -i s/deb.debian.org/archive.debian.org/g /etc/apt/sources.list
-RUN sed -i 's|security.debian.org|archive.debian.org/|g' /etc/apt/sources.list
-RUN sed -i '/stretch-updates/d' /etc/apt/sources.list
+COPY requirements.txt constraints.txt sources.ini /app/
 
-RUN apt-get update && apt-get install -y --no-install-recommends apt-utils \
- && apt-get install build-essential bash-completion pkg-config software-properties-common \
- python-setuptools binutils libgdal-dev -y
-
-RUN pip install numpy==1.16.4
-RUN pip install pygdal==2.1.2.3 rsa==4.0 oauth2client
-
-RUN buildout
-
-COPY buildout.cfg /plone/instance/
-RUN timeout 3600 buildout
-#-N
+RUN bin/pip install "mxdev>=3.0.0" \
+  && bin/mxdev -c sources.ini \
+  && bin/pip install -r requirements-mxdev.txt \
+  && find /app -not -user plone -exec chown plone:plone {} \+
