@@ -9,7 +9,5 @@ RUN runDeps="vim tmux mc" \
 COPY requirements.txt constraints.txt sources.ini /app/
 COPY ./etc/zodbpack.conf /app/etc/zodbpack.conf
 
-RUN bin/pip install "mxdev>=3.0.0" \
-  && bin/mxdev -c sources.ini \
-  && bin/pip install -r requirements-mxdev.txt \
-  && find /app -not -user plone -exec chown plone:plone {} \+
+RUN ./bin/pip install -r requirements.txt -c constraints.txt ${PIP_PARAMS} \
+ && find /app -not -user plone -exec chown plone:plone {} \+
