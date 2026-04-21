@@ -1,4 +1,8 @@
-collective.exportimport
+eea.climateadapt @ git+https://github.com/eea/eea.climateadapt.plone.git@master
+collective.exportimport @ git+https://github.com/collective/collective.exportimport.git@main
+collective.volto.subsites @ git+https://github.com/collective/collective.volto.subsites.git@main
+eea.coremetadata @ git+https://github.com/eea/eea.coremetadata.git@develop
+eea.volto.policy @ git+https://github.com/eea/eea.volto.policy.git@search_vocabs
+eea.api.dataconnector @ git+https://github.com/eea/eea.api.dataconnector.git@12.0
+eea.plotly @ git+https://github.com/eea/eea.plotly.git@1.7
 collective.geolocationbehavior
-collective.volto.subsites
-eea.coremetadata
