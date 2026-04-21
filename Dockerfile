@@ -9,7 +9,5 @@ RUN runDeps="vim tmux mc" \
 COPY requirements.txt constraints.txt /app/
 COPY ./etc/zodbpack.conf /app/etc/zodbpack.conf
 
-RUN ./bin/pip install -c constraints.txt ${PIP_PARAMS} \
-    "git+https://github.com/eea/eea.climateadapt.plone.git@develop#egg=eea.climateadapt" \
-  && ./bin/pip install -r requirements.txt -c constraints.txt ${PIP_PARAMS} \
+RUN ./bin/pip install -r requirements.txt -c constraints.txt ${PIP_PARAMS} \
   && find /app -not -user plone -exec chown plone:plone {} \+
