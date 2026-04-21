@@ -6,3 +6,4 @@ eea.volto.policy @ git+https://github.com/eea/eea.volto.policy.git@search_vocabs
 eea.api.dataconnector @ git+https://github.com/eea/eea.api.dataconnector.git@12.0
 eea.plotly @ git+https://github.com/eea/eea.plotly.git@1.7
 collective.geolocationbehavior
+rss-provider
