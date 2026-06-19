@@ -1,4 +1,4 @@
-eea.climateadapt @ git+https://github.com/eea/eea.climateadapt.plone.git@master
+eea.climateadapt @ git+https://github.com/eea/eea.climateadapt.plone.git@staging
 collective.exportimport @ git+https://github.com/collective/collective.exportimport.git@main
 collective.volto.subsites @ git+https://github.com/collective/collective.volto.subsites.git@main
 eea.coremetadata @ git+https://github.com/eea/eea.coremetadata.git@develop
